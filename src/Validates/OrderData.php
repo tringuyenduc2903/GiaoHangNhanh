@@ -29,7 +29,7 @@ class OrderData
             'to_address' => ['required', 'string', 'max:1024'],
             'to_ward_name' => ['nullable', 'string'],
             'to_district_name' => ['required_without:to_district_id', 'string'],
-            'to_ward_code' => ['nullable', 'integer'],
+            'to_ward_code' => ['nullable', 'string'],
             'to_district_id' => ['required_without:to_district_name', 'integer'],
             'return_phone' => ['sometimes', 'string'],
             'return_address' => ['sometimes', 'string', 'max:1024'],
@@ -103,7 +103,7 @@ class OrderData
             'to_address' => ['required', 'string', 'max:1024'],
             'to_ward_name' => ['nullable', 'string'],
             'to_district_name' => ['required_without:to_district_id', 'string'],
-            'to_ward_code' => ['nullable', 'integer'],
+            'to_ward_code' => ['nullable', 'string'],
             'to_district_id' => ['required_without:to_district_name', 'integer'],
             'return_phone' => ['sometimes', 'string'],
             'return_address' => ['sometimes', 'string', 'max:1024'],
@@ -177,7 +177,7 @@ class OrderData
         return Validator::validate($data, [
             'from_ward_code' => ['sometimes', 'string'],
             'from_district_id' => ['sometimes', 'integer'],
-            'to_ward_code' => ['nullable', 'integer'],
+            'to_ward_code' => ['nullable', 'string'],
             'to_district_id' => ['required_without:to_ward_code', 'integer'],
             'service_id' => ['required', 'integer'],
         ]);

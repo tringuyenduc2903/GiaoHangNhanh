@@ -20,7 +20,7 @@ class CalculateFeeData
             'cod_failed_amount' => ['sometimes', 'integer', 'min:0'],
             'from_ward_code' => ['sometimes', 'string'],
             'from_district_id' => ['sometimes', 'integer'],
-            'to_ward_code' => ['nullable', 'integer'],
+            'to_ward_code' => ['nullable', 'string'],
             'to_district_id' => ['required_without:to_ward_code', 'integer'],
             'weight' => ['required', 'integer', 'between:0,50000'],
             'length' => ['sometimes', 'integer', 'between:0,200'],
