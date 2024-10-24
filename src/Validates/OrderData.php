@@ -43,7 +43,7 @@ class OrderData
                 ]),
             'return_ward_code' => Rule::when(
                 $required, [
-                    'required_without:return_ward_name', 'integer',
+                    'required_without:return_ward_name', 'string',
                 ]),
             'return_district_id' => Rule::when(
                 $required, [
@@ -117,7 +117,7 @@ class OrderData
                 ]),
             'return_ward_code' => Rule::when(
                 $required, [
-                    'required_without:return_ward_name', 'integer',
+                    'required_without:return_ward_name', 'string',
                 ]),
             'return_district_id' => Rule::when(
                 $required, [
@@ -165,7 +165,7 @@ class OrderData
     public static function getStation(array $data): array
     {
         return Validator::validate($data, [
-            'ward_code' => ['sometimes', 'integer'],
+            'ward_code' => ['sometimes', 'string'],
             'district_id' => ['required', 'integer'],
             'offset' => ['sometimes', 'integer', 'min:0'],
             'limit' => ['sometimes', 'integer', 'between:1,1000'],
